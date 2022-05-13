@@ -11,16 +11,15 @@ class SeriesController extends Controller
         $series = [
             "Flash",
             "Breaking Bad",
-            "Prison Break"
+            "Prison Break",
+            "Grey's Anatomy"
         ];
+        // ["series" => $series] == compact('series')
+        return view("series.index",compact('series'));
+    }
 
-        $html = "<ul>";
-        foreach ($series as $serie) {
-            $html .= "<li>$serie</li>";
-        }
-
-        $html .= "</ul>";
-
-        return $html;
+    public function create()
+    {
+        return view("series.create");
     }
 }
